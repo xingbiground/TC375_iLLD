@@ -93,12 +93,12 @@ void core0_main (void)
 
     /* Define a MAC Address */
     eth_addr_t ethAddr;
-    ethAddr.addr[0] = 0xDE;
-    ethAddr.addr[1] = 0xAD;
-    ethAddr.addr[2] = 0xBE;
-    ethAddr.addr[3] = 0xEF;
-    ethAddr.addr[4] = 0xFE;
-    ethAddr.addr[5] = 0xED;
+    ethAddr.addr[0] = 0x81;
+    ethAddr.addr[1] = 0x82;
+    ethAddr.addr[2] = 0x83;
+    ethAddr.addr[3] = 0x84;
+    ethAddr.addr[4] = 0x85;
+    ethAddr.addr[5] = 0x86;
 
     Ifx_Lwip_init(ethAddr);                                 /* Initialize LwIP with the MAC address                         */
 
