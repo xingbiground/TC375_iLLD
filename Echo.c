@@ -135,9 +135,10 @@ void echoClose (tcpPcb *tPcb, EchoSession *es);                     /* Close fun
 void echoInit(void)
 {
     g_echoPcb = tcp_new();                                          /* Create a new TCP protocol control block                                                      */
+    ip_addr_t TempAddr = {PP_HTONL(LWIP_MAKEU32(192,168,8,8))};
     if (g_echoPcb != NULL)                                          /* If the creation was successful...                                                            */
     {
-        err_t err = tcp_bind(g_echoPcb, IP_ADDR_ANY, 80);           /* ...bind the TCP procotol control block to any local address and local port 80.               */
+        err_t err = tcp_bind(g_echoPcb, &TempAddr, 80);           /* ...bind the TCP procotol control block to any local address and local port 80.               */
         if (err == ERR_OK)                                          /* If the binding was successful...                                                             */
         {
             g_echoPcb = tcp_listen(g_echoPcb);                      /* ...set the TCP control block able to accept incoming connections.                            */
